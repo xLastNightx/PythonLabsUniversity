@@ -1,5 +1,0 @@
-sername = input("inter sername: ")
-name = input("inter name: ")
-lastname = input("inter lastname: ")
-print(sername, name, lastname)
-print("result: ", sername, name[0], lastname[0])
