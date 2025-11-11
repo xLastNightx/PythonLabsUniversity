@@ -23,8 +23,8 @@ def log_calls(filename):
     return decorator
 
 @log_calls("log.txt")
-def add(a, b):
-    return a + b
+def add(*a):
+    return sum(a)
 
 @log_calls("log.txt") 
 def greet(name, age=None):
@@ -33,14 +33,16 @@ def greet(name, age=None):
     else:
         return f"Hello {name}"
 
-if __name__ == "__main__":
-    
-    result1 = add(5, 3)
-    print(f"add(5, 3) = {result1}")
-    
-    result2 = greet("Alice")
-    print(f"greet('Alice') = {result2}")
-    
-    result3 = greet("Bob", age=25)
-    print(f"greet('Bob', age=25) = {result3}")
+
+result1 = add(5, 3)
+print(f"add(5, 3) = {result1}")
+
+result1 = add(5, 3, 9, 12)
+print(f"add(another) = {result1}")
+
+result2 = greet("Alice")
+print(f"greet('Alice') = {result2}")
+
+result3 = greet("Bob", age=25)
+print(f"greet('Bob', age=25) = {result3}")
     
