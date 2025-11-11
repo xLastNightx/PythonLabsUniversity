@@ -5,14 +5,17 @@
 # } 
 #можно и вот так (услышала, что нудно именно сгенерировать, а не создавать, поэтому дополнила)
 
-numbers = {}
-for iter in range(2, 10, 2):
-    deliteli = []
+# numbers = {}
+# for iter in range(2, 10, 2):
+#     deliteli = []
 
-    for anotherIter in range(1, iter + 1):
-        if iter % anotherIter == 0:  deliteli.append(anotherIter)  
+#     for anotherIter in range(1, iter + 1):
+#         if iter % anotherIter == 0:  deliteli.append(anotherIter)  
     
-    numbers[iter] = {"делители": deliteli}
+#     numbers[iter] = {"делители": deliteli}
+numbers = {}
+for iter in range(2, 11):
+    numbers[iter] = {"делители": [anotherIter for anotherIter in range(1, iter + 1) if iter % anotherIter == 0]}
 
 number = int(input("Введите целое число и программа выдаст его делители: "))
 
